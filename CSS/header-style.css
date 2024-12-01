@@ -1,0 +1,160 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Raleway,sans-serif;
+}
+
+/* Header Styles */
+.header {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ebebdf;
+  font-size: 14px;
+}
+
+.header-top .contact-info {
+  display: flex; /* Flexbox for alignment */
+  align-items: center;
+}
+/* Base styles for contact info */
+.header-top .contact-info {
+  display: flex; /* Use flexbox for larger screens */
+  justify-content: space-between; /* Space out items */
+  flex-wrap: wrap; /* Allow items to wrap */
+}
+
+/* Styles for individual contact items */
+.contact-item {
+  flex: 2; /* Allow items to grow and fill space */
+  min-width: 100px; /* Set a minimum width for items */
+}
+
+/* Media query for mobile screens */
+@media (max-width: 450px) {
+  .contact-info {
+    flex-direction: column; /* Stack items vertically on mobile */
+    align-items: flex-start; /* Align items to the start */
+    font-size: 12px; /* Adjust the font size for mobile */
+  }
+  
+  .contact-item {
+    margin-bottom: 10px; /* Add some space between items */
+    width: 100%; /* Make items full width */
+  }
+}
+
+.header-top .contact-item {
+  display: flex; /* Align icon and text side by side */
+  align-items: center;
+  margin-right: 15px;
+}
+
+.header-top .contact-item .icon {
+  width: 16px; /* Set icon size */
+  height: 16px;
+  margin-right: 5px; /* Space between icon and text */
+}
+
+.header-top .social-icons {
+  display: flex; /* Use flexbox to align items horizontally */
+  align-items: center; /* Center items vertically */
+}
+
+.header-top .social-icons a {
+  margin-right: 10px; /* Space between icons */
+  text-decoration: none;
+}
+
+.header-top .social-icons img.social-icon {
+  width: 20px; /* Set the size of the logos */
+  height: 20px;
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.header-top .social-icons img.social-icon:hover {
+  transform: scale(1.2); /* Add a hover effect */
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #fff;
+}
+
+.logo {
+  display: flex; /* Align logo image and text side by side */
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.logo-image {
+  width: 55px; /* Reduced width */
+  height: 55px; /* Reduced height */
+  margin-right: 8px; /* Slightly adjusted spacing */
+}
+
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 0 10px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #4CAF50;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
